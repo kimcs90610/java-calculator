@@ -24,7 +24,7 @@
 ## JUnit, AssertJ 구현
 [AssertJ Exception Assertions](https://www.baeldung.com/assertj-exception-assertion) 문서 참고
 
-```
+```java
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 assertThatExceptionOfType(IndexOutOfBoundsException.class)
@@ -35,7 +35,7 @@ assertThatExceptionOfType(IndexOutOfBoundsException.class)
 
 테스트 데이터 전달
 [Guide to JUnit 5 Parameterized Tests](https://www.baeldung.com/parameterized-tests-junit-5)
-```
+```java
 @ParameterizedTest
 @ValueSource(strings = {"", "  "})
 void isBlank_ShouldReturnTrueForNullOrBlankStrings(String input) {
