@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="racing.model.CarNamesTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-11T13:56:13" hostname="Patrickui-MacBookPro.local" time="0.044">
+  <properties/>
+  <testcase name="findWinnerTest()" classname="racing.model.CarNamesTest" time="0.044"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
