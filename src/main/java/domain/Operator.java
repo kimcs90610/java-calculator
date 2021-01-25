@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Arrays;
 import java.util.function.BiFunction;
 
 public enum Operator {
@@ -8,7 +9,6 @@ public enum Operator {
     MULTIPLY("*", (a, b) -> (a * b)),
     DIVISION("/", (a, b) -> (a / b));
 
-    private static Operator finedOperator = null;
     private final String operator;
     private final BiFunction<Integer, Integer, Integer> expression;
 
@@ -17,28 +17,14 @@ public enum Operator {
         this.expression = expression;
     }
 
-    public static int calculate(int firstNumber, String operator, int secondNumber) throws Exception {
+    public static int calculate(int firstNumber, String operator, int secondNumber) {
         return findOperator(operator).expression.apply(firstNumber, secondNumber);
     }
 
-    public static Operator findOperator(String operator) throws Exception {
-        for (Operator enumObject : values()) {
-            compareOperator(enumObject, operator);
-        }
-        if (finedOperator == null) {
-            throw new IllegalArgumentException("연산자가 없습니다.");
-        }
-
-        return finedOperator;
-/*        return Arrays.stream(values())
+    public static Operator findOperator(String operator) {
+        return Arrays.stream(values())
                 .filter(enumValue -> enumValue.operator.equals(operator))
-                .findFirst().get();*/
-    }
-
-    private static void compareOperator(Operator enumObject, String operator) {
-        if (enumObject.operator.equals(operator)) {
-            finedOperator = enumObject;
-        }
+                .findFirst().orElseThrow(() -> new IllegalArgumentException("올바른 연산자를 입력해주세요."));
     }
 
 }
